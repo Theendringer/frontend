@@ -2,11 +2,14 @@ import { Component } from "react";
 import styled from "styled-components";
 import NavBar from './components/navbar'
 import GlobalStyles from "./styles/global";
-import NovaSala from "./components/novaSala"
-import Tabela from "./components/tabela"
+import AdmNovaSala from "./components/admNovaSala"
+import AdmTabela from "./components/admTabela"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from "react"
 import axios from "axios"
+import Tabela from "./components/tabela"
+import Buscar from "./components/buscar"
+
 
 
 
@@ -14,7 +17,7 @@ import axios from "axios"
 function App(){
 
   const [users, setUsers] = useState([]);
-  const [onEdit, setOnEdit] = useState([null])
+  const [onEdit, setOnEdit] = useState(null)
 
 
   const getUsers = async () => {
@@ -35,9 +38,9 @@ function App(){
       <>
         <NavBar/>
         <div className="container">
-        <NovaSala onEdit={onEdit} setOnEdit={setOnEdit} getUsers={getUsers}/>
         <br></br>
-        <Tabela users={users} setUsers={setUsers} setOnEdit={setOnEdit}/>
+        <Buscar/>
+        <Tabela users={users}/>
         </div>
         <GlobalStyles />
       </>

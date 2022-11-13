@@ -5,6 +5,10 @@ import Navbar from 'react-bootstrap/Navbar';
 
 
 
+
+
+
+
 function ColorSchemesExample() {
   return (
     <>
@@ -13,9 +17,7 @@ function ColorSchemesExample() {
           <Navbar.Brand href="#home">
             </Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="/">Inicio</Nav.Link>
-            <Nav.Link href="novasala">Nova Sala</Nav.Link>
-            <Nav.Link href="listarsalas">Listar Sala</Nav.Link>
+            <Nav.Link href="/">Unisalas</Nav.Link>
           </Nav>
         </Container>
       </Navbar>

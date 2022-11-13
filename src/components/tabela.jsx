@@ -1,30 +1,7 @@
-import axios from 'axios';
 import Table from 'react-bootstrap/Table';
 
-function BasicExample({users, setUsers, setOnEdit}) {
-  const handleEdit = (item) => {
-    setOnEdit(item)
-  }
-
-
+function BasicExample({users}) {
   
-  
-  
-  const handleDelete = async (id) =>{
-    await axios
-    .delete("http://localhost:8800" + id)
-    .then(({data}) => {
-      const newArray = users.filter((user) => user.id !== id)
-
-      setUsers(newArray)
-    })
-    .catch(({data}) => toast.error(data))
-
-    setOnEdit(null)
-  }
-
-
-
 
 
   return (
@@ -44,8 +21,6 @@ function BasicExample({users, setUsers, setOnEdit}) {
                 <td>{item.nome}</td>
                 <td>{item.codigo}</td>
                 <td>{item.descricao}</td>
-                <td><button onClick={() => handleEdit(item)}>Editar</button></td>
-                <td><button onClick={() => handleDelete(item.id)}>Excluir</button></td>
             </tr>
         ))}
         
@@ -55,3 +30,4 @@ function BasicExample({users, setUsers, setOnEdit}) {
 }
 
 export default BasicExample;
+
