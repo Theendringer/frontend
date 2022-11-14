@@ -9,6 +9,8 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 import Tabela from "./components/tabela"
 import Buscar from "./components/buscar"
+import Carrosel from "./components/carrosel"
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 
 
@@ -38,6 +40,7 @@ function App(){
       <>
         <NavBar/>
         <div className="container">
+        <Carrosel/>
         <br></br>
         <Buscar/>
         <Tabela users={users}/>

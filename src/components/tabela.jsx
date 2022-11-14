@@ -8,10 +8,10 @@ function BasicExample({users}) {
     <Table striped bordered hover>
       <thead>
         <tr>
-          <th>id</th>
+          <th>ID</th>
           <th>Nome da Sala</th>
-          <th>Codigo</th>
-          <th>Descricao</th>
+          <th>Código</th>
+          <th>Descrição</th>
         </tr>
       </thead>
       <tbody>

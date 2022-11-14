@@ -1,41 +1,39 @@
-import React, { useState } from 'react';
-import Carousel from 'react-bootstrap/Carousel';
+//import React from "react";
+import { Carousel } from 'react-bootstrap';
+import React, { Component } from "react";
+import fies from '/bannerFies.png';
+import live from '/bannerLive.jpg';
+import nossa from '/bannerNossa.png';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function ControlledCarousel() {
-  const [index, setIndex] = useState(0);
 
-  const handleSelect = (selectedIndex, e) => {
-    setIndex(selectedIndex);
-  };
-
+function Carrosel() {
   return (
-    <Carousel activeIndex={index} onSelect={handleSelect}>
-      <Carousel.Item>
-        <img
+    <Carousel>
+      <Carousel.Item interval={10000}>
+      <img
           className="d-block w-100"
-          src="./img/logo.svg"
+          src={fies}
           alt="First slide"
         />
-        
       </Carousel.Item>
-      <Carousel.Item>
-        <img
+      <Carousel.Item interval={10000}>
+      <img
           className="d-block w-100"
-          src="holder.js/800x400?text=Second slide&bg=282c34"
-          alt="Second slide"
+          src={live}
+          alt="Secund slide"
         />
-
       </Carousel.Item>
-      <Carousel.Item>
-        <img
+      <Carousel.Item interval={10000}>
+      <img
           className="d-block w-100"
-          src="holder.js/800x400?text=Third slide&bg=20232a"
+          src={nossa}
           alt="Third slide"
         />
-
       </Carousel.Item>
     </Carousel>
   );
 }
 
-render(<ControlledCarousel />);
+export default Carrosel;
+
