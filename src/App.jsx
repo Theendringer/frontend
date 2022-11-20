@@ -1,29 +1,20 @@
-import { Component } from "react";
-import styled from "styled-components";
-import NavBar from './components/navbar'
-import GlobalStyles from "./styles/global";
-import AdmNovaSala from "./components/admNovaSala"
-import AdmTabela from "./components/admTabela"
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { useEffect, useState } from "react"
-import axios from "axios"
-import Tabela from "./components/tabela"
-import Buscar from "./components/buscar"
-import Carrosel from "./components/carrosel"
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import Home from './Home.jsx'
+import Adm from './Adm.jsx'
 
 
 
 
 
-function App(){
+function App() {
 
   const [users, setUsers] = useState([]);
   const [onEdit, setOnEdit] = useState(null)
 
 
   const getUsers = async () => {
-    try{
+    try {
       const res = await axios.get("http://localhost:8800")
       setUsers(res.data.sort((a, b) => (a.nome > b.nome ? 1 : -1)));
     } catch (error) {
@@ -36,19 +27,17 @@ function App(){
   }, [setUsers])
 
 
-    return (
-      <>
-        <NavBar/>
-        <div className="container">
-        <Carrosel/>
-        <br></br>
-        <Buscar/>
-        <Tabela users={users}/>
-        </div>
-        <GlobalStyles />
-      </>
-    );
-  }
+  return (
+    <>
+      <BrowserRouter>
+        <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/adm' element={<Adm/>}/>
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
+}
 
 
 export default App;
