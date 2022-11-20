@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { useEffect, useState } from "react"
 import Home from './Home.jsx'
 import Adm from './Adm.jsx'
+import Login from './Login.jsx'
 
 
 
@@ -33,6 +34,7 @@ function App() {
         <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/adm' element={<Adm/>}/>
+        <Route path='/login' element={<Login/>}/>
         </Routes>
       </BrowserRouter>
     </>

@@ -8,10 +8,10 @@ function HeaderAndFooterExample() {
       <Card.Header>Projeto Unisalas</Card.Header>
       <Card.Body>
         <Card.Text>
-          Desenvolvido por: Alexander, Carlos, Gabriella, Gustavo, Gustavo, Lucas e Marllon
+          Desenvolvido por: Alexander, Carlos, Gabriella, Gustavo B., Gustavo E., Lucas e Marllon
         </Card.Text>
       </Card.Body>
-      <Card.Footer className="text-muted"><Button href="/adm" variant="primary">Admin</Button></Card.Footer>
+      <Card.Footer className="text-muted"><Button href="/login" variant="primary">Admin</Button></Card.Footer>
     </Card>
   );
 }
